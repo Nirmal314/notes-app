@@ -58,7 +58,7 @@ const Documents = ({ setSelectedFile }) => {
   const FolderOptionsDropdown = ({ folderId }) => {
     return (
       <div
-        className={`absolute right-0 top-10 mb-2 w-48 bg-white rounded-md shadow-lg ${
+        className={`absolute z-30 right-0 top-10 mb-2 w-48 bg-white rounded-md shadow-lg ${
           dropdownOpen === folderId ? 'block' : 'hidden'
         }`}
       >
@@ -429,7 +429,7 @@ const Documents = ({ setSelectedFile }) => {
             <h3 className="text-lg font-semibold mb-2">Folders</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {folders.map((folder) => (
-                <div key={folder.id} className="relative z-10 bg-blue-50 hover:bg-blue-100 shadow-md hover:scale-105 transition-transform transform rounded-md p-4 flex justify-between items-center">
+                <div key={folder.id} className="relative bg-blue-50 hover:bg-blue-100 shadow-md transition-colors duration-200 rounded-md p-4 flex justify-between items-center">
                   <div className="flex items-center"  onClick={() => handleFolderClick(folder.id, folder.name)}>
                     <FolderIcon className="text-blue-400 text-2xl mr-2" />
                     <span className="text-sm font-medium" title={folder.name}>
@@ -450,7 +450,7 @@ const Documents = ({ setSelectedFile }) => {
               {userFiles.map((file) => (
                 <div
                   key={file.id}
-                  className="bg-blue-50 hover:bg-blue-100 shadow-md hover:scale-105 transition-transform transform rounded-md p-4 flex flex-col justify-between items-center"
+                  className="bg-blue-50 hover:bg-blue-100 shadow-md transition-colors duration-200 rounded-md p-4 flex flex-col justify-between items-center"
                   onClick={() => handleFileClick(file)}
                 >
                   {/* <div className="w-full h-32 bg-gray-200 flex items-center justify-center overflow-hidden mb-2">
